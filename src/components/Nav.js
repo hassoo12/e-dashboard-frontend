@@ -13,6 +13,7 @@ const Nav=()=>{
                 <li><Link to="/profile">Profile</Link></li>
                 <li>{ auth ? <Link to="/logout">Logout</Link>:
                 <Link to="/signup">SignUp</Link>}</li>
+                <li><Link to="/login">Login</Link></li>
             </ul>
         </div>
     )
