@@ -1,13 +1,30 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login=()=>{
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
-    const collectData=()=>{
-        console.log(email,password)
+    const navigate = useNavigate();
+
+    const handleLogin=async ()=>{
+        let result = await fetch("http://localhost:5000/login",{
+            method:"post",
+            body:JSON.stringify({email,password}),
+            headers:{
+                "Content-Type": "application/json",
+            }
+        });
+        result = await result.json();
+        console.log(result)
+        if(result.name){
+            localStorage.setItem("user",JSON.stringify(result));
+            navigate('/')
+        }else{
+            alert("enter correct details")
+        }
     }
-    
+
     return(
         <div className="login">
         <h1>Login page</h1>
@@ -21,7 +38,7 @@ const Login=()=>{
         placeholder="Enter Password"/>
 
         <button type="button" className="appButton" 
-        onClick={collectData}>
+        onClick={handleLogin}>
             Login</button>
         </div>
     )
