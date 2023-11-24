@@ -7,6 +7,7 @@ const Login=()=>{
     const collectData=()=>{
         console.log(email,password)
     }
+    
     return(
         <div className="login">
         <h1>Login page</h1>
