@@ -7,8 +7,18 @@ const AddProduct=()=>{
     const[category,setCategory]=useState("");
     const[company,setCompany]=useState("");
 
-    const consoleData=()=>{
-        console.log(name,price,category,company)
+    const addProduct=async()=>{
+        console.log(name,price,category,company);
+        const userId = localStorage.getItem("user")._id;
+        let result= await fetch("http://localhost:5000/add-product",{
+            method:"post",
+            body:JSON.stringify({name,price,category,company,userId}),
+            headers:{
+                'Content-Type':'application/json'
+            }
+        });
+        result = await result.json();
+        console.log(result);
     }
     
 
@@ -34,7 +44,7 @@ const AddProduct=()=>{
             />
 
             <button type="button" className="appButton"
-            onClick={consoleData}>
+            onClick={addProduct}>
                 
                 Add Product</button>
         </div>
