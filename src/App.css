@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-.register{
+.register,.addProduct{
   margin-left: 30%;
 }
 .login{
