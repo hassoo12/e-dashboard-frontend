@@ -78,6 +78,13 @@
 .App-link {
   color: #61dafb;
 }
+.invalid-input{
+  margin-top: -20px;
+  display: block;
+  margin-left: 24px;
+  font-size: small;
+  color: red;
+}
 
 @keyframes App-logo-spin {
   from {
