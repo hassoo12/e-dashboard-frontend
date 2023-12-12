@@ -85,6 +85,20 @@
   font-size: small;
   color: red;
 }
+.products{
+  text-align: center;
+  margin-top: 50px;
+
+}
+.products ul{
+  margin: 0;
+}
+.products ul li{
+  display: inline-block;
+  border: 1px solid #61dafb;
+  padding: 5px;
+  width: 150px;
+}
 
 @keyframes App-logo-spin {
   from {
